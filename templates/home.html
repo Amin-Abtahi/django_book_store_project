@@ -11,8 +11,8 @@
         <button type="submit">log Out</button>
         </form>
 
-
         <p>Welcome {{ user.username }} | <a href="{% url 'logout' %}">Log Out</a> </p>
+        <a href="{% url 'password_change' %}">change my password</a>
     {% else %}
         <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">sign Up</a>
     {% endif %} 
