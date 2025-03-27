@@ -3,6 +3,7 @@
 {% block page_title %} لیست کتابها {% endblock %}
 
 {% block content %}
+     <h4><a href="{% url 'book_create' %}">ایجاد کتاب</a></h4>
 	{% for book in books %}
 {#        <a href="{% url 'book_detail' book.id %}"><h2>{{ book.title }}</h2></a>#}
         <a href="{{ book.get_absolute_url}}"><h2>{{ book.title }}</h2></a>

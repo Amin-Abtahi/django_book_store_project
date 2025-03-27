@@ -9,5 +9,15 @@
         <h2>قیمت: {{ book.price }} </h2>
     <br>
     <a href="{% url 'book_list' %}">لیست کتابها </a>
+    <br>
+    <a href="{% url 'book_delete' book.id %}" class="btn btn-sm btn-danger"> DELETE </a>
+{#    <a href="{% url 'book_delete' %}{{  book.get_absolute_url }}" class="btn btn-sm btn-danger"> DELETE </a>#}
+    <h4>{{ book.id }}</h4>
+
+{#    <a href="{% url 'book_detail' book.id %}"#}
+{#                   class="btn btn-sm btn-success"> Read More... </a>#}
+{#                <a href="{% url 'book_update' book.id %}"#}
+{#                   class="btn btn-sm btn-warning"> update </a>#}
+
 
 {% endblock %}
