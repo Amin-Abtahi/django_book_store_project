@@ -5,21 +5,99 @@
 {% block page_title %} توضیحات کتاب {% endblock %}
 
 {% block content %}
-		<h1>{{ book.title }}</h1>
-        <h3>از {{ book.author }}</h3>
-        <h4>خلاصه کتاب: {{ book.brief|to_lowercase|linebreaks}}</h4>
-        <h2>قیمت: {{ book.price }} </h2>
-    <br>
-    <a href="{% url 'book_list' %}" class="btn btn-primary">لیست کتابها </a>
-    <br>
-    <a href="{% url 'book_delete' book.id %}" class="btn btn-danger"> DELETE </a>
-    <a href="{% url 'book_update' book.id %}" class="btn btn-warning"> update </a>
-{#    <a href="{% url 'book_delete' %}{{  book.get_absolute_url }}" class="btn btn-sm btn-danger"> DELETE </a>#}
-    <h4>{{ book.id }}</h4>
+    {#		<h1>{{ book.title }}</h1>#}
+    {#        <h3>از {{ book.author }}</h3>#}
+    {#        <h4>خلاصه کتاب: {{ book.brief|to_lowercase|linebreaks}}</h4>#}
+    {#        <h2>قیمت: {{ book.price }} </h2>#}
+    {#    <br>#}
+    {#    <a href="{% url 'book_list' %}" class="btn btn-primary">لیست کتابها </a>#}
+    {#    <br>#}
+    {#    <a href="{% url 'book_delete' book.id %}" class="btn btn-danger"> DELETE </a>#}
+    {#    <a href="{% url 'book_update' book.id %}" class="btn btn-warning"> update </a>#}
+    {#    <a href="{% url 'book_delete' %}{{  book.get_absolute_url }}" class="btn btn-sm btn-danger"> DELETE </a>#}
+    {#    <h4>{{ book.id }}</h4>#}
+    {##}
+    {#    <a href="{% url 'book_detail' book.id %}"#}
+    {#                   class="btn btn-sm btn-success"> Read More... </a>#}
 
-{#    <a href="{% url 'book_detail' book.id %}"#}
-{#                   class="btn btn-sm btn-success"> Read More... </a>#}
+    <div class="container mt-5" dir="rtl">
+        <div class="">
+            <div class="">
+                <div class="d-flex justify-content-center">
+                    <div class="row w-sm-75 w-100">
+                        <div class="col-xs-12 col-md-3 d-flex justify-content-center">
+                            <div>
+                                <img src="https://m.media-amazon.com/images/I/610QDSRlLYL._AC_UF1000,1000_QL80_.jpg"
+                                     class="img-fluid rounded-start" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 text-center text-md-end mt-md-1 mt-4">
+                            <h1>{{ book.title }}</h1>
+                            <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ book.author }}</h5>
+                            <h5 class="small my-1"><span class="text-muted">مترجم: </span>book.translator</h5>
+                            <h5 class="small my-1"><span class="text-muted">انتشارات: </span>publisher</h5>
+                        </div>
+                        <div class="col-xs-12 col-md-3 d-flex flex-column">
+                            <h3 class="align-self-center pt-2 text-muted align-self-md-end">
+                                {{ book.price }} تومن
+                            </h3>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="d-flex justify-content-center">
+                    <div class="my-3 p-5 w-sm-75 w-100">
+                        {{ book.brief }}
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-center">
+                <div class="card shadow my-3 p-5 w-sm-75 w-100">
+                    <h2 class="mb-5">نظرات:</h2>
+                    <div class="border-bottom mb-3">
+                        <h5 class="mb-3">نوشین توکلی</h5>
+                        <p>با سلام چند تا نکته میخواستم بگم اول اینکه من جزء دسته از آدمایی بودم که میگفتم کتاب خوندن لذتش
+                            به اینه که آدم کتابو بگیره دستش و بخونه اما واقعا میگم فیدیبو تو زمینه کاری خودش داره خوب عمل
+                            میکنه امیدوارم روز به روز موفق تر بشه ممنون بابت کتابهای خوبی که میزارید چونکه خیلی به روزه</p>
+                    </div>
+                    <div class="border-bottom mb-3">
+                        <h5 class="mb-3">نوشین توکلی</h5>
+                        <p>با سلام چند تا نکته میخواستم بگم اول اینکه من جزء دسته از آدمایی بودم که میگفتم کتاب خوندن لذتش
+                            به اینه که آدم کتابو بگیره دستش و بخونه اما واقعا میگم فیدیبو تو زمینه کاری خودش داره خوب عمل
+                            میکنه امیدوارم روز به روز موفق تر بشه ممنون بابت کتابهای خوبی که میزارید چونکه خیلی به روزه</p>
+                    </div>
+                    <div>
+                        <h5 class="mb-3">نوشین توکلی</h5>
+                        <p>با سلام چند تا نکته میخواستم بگم اول اینکه من جزء دسته از آدمایی بودم که میگفتم کتاب خوندن لذتش
+                            به اینه که آدم کتابو بگیره دستش و بخونه اما واقعا میگم فیدیبو تو زمینه کاری خودش داره خوب عمل
+                            میکنه امیدوارم روز به روز موفق تر بشه ممنون بابت کتابهای خوبی که میزارید چونکه خیلی به روزه</p>
+                    </div>
+                </div>
+            </div>
 
+                <div class="d-flex justify-content-center">
+                <div class="card shadow my-3 p-5 w-sm-75 w-100">
+                    <h3>نظر خود را وارد کنید:</h3>
+                    <form method="POST">
+                        <div class="form-group py-2">
+                            <label class="py-1" for="author_name">نام شما:</label>
+                            <input type="text" class="form-control" placeholder="علی علوی" name="author_name">
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="py-1" for="email">ایمیل شما:</label>
+                            <input type="email" class="form-control" placeholder="example@gmail.com" name="email">
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="py-1" for="comment_text">متن نظر:</label>
+                            <textarea class="form-control" name="text" rows="3"
+                                      placeholder="نظر خود را اینجا وارد کنید."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
