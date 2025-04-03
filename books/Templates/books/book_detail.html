@@ -55,8 +55,11 @@
                 <div class="d-flex justify-content-center">
                     <div class="my-3 p-5 w-sm-75 w-100">
                         {{ book.brief }}
-                        <a href="{% url 'book_delete' book.id %}" class="btn btn-danger"> DELETE </a>
-                        <a href="{% url 'book_update' book.id %}" class="btn btn-warning"> update </a>
+                        {% if book.user == user %}
+                            <br>
+                            <a href="{% url 'book_delete' book.id %}" class="btn btn-danger"> DELETE </a>
+                            <a href="{% url 'book_update' book.id %}" class="btn btn-warning"> update </a>
+                        {% endif %} 
                     </div>
 
                 </div>
